@@ -13,7 +13,7 @@ public class JobRunner implements ApplicationRunner {
 
     @Autowired
     private JobLauncher jobLauncher;
-
+//
     @Autowired
     private Job job;
 
