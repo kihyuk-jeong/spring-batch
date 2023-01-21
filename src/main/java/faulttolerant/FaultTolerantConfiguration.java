@@ -1,31 +1,16 @@
 package faulttolerant;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.batch.core.*;
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
-import org.springframework.batch.item.*;
-import org.springframework.batch.item.adapter.ItemWriterAdapter;
-import org.springframework.batch.item.support.ClassifierCompositeItemProcessor;
-import org.springframework.batch.item.support.CompositeItemProcessor;
-import org.springframework.batch.item.support.builder.CompositeItemProcessorBuilder;
-import org.springframework.batch.repeat.CompletionPolicy;
-import org.springframework.batch.repeat.RepeatCallback;
-import org.springframework.batch.repeat.RepeatContext;
-import org.springframework.batch.repeat.RepeatStatus;
+import org.springframework.batch.item.ItemProcessor;
+import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.repeat.exception.SimpleLimitExceptionHandler;
-import org.springframework.batch.repeat.policy.SimpleCompletionPolicy;
-import org.springframework.batch.repeat.policy.TimeoutTerminationPolicy;
-import org.springframework.batch.repeat.support.RepeatTemplate;
-import org.springframework.classify.PatternMatchingClassifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @RequiredArgsConstructor
 @Configuration
