@@ -1,4 +1,4 @@
-package io.springbatch.springbatchlecture;
+package io.springbatch.springbatchlecture.basic;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;
@@ -13,7 +13,6 @@ public class JobRunner implements ApplicationRunner {
 
     @Autowired
     private JobLauncher jobLauncher;
-//
     @Autowired
     private Job job;
 
